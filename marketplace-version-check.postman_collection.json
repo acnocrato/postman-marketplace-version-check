@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "77864cb5-9182-47a7-87b2-f082bf51ac67",
+		"name": "Marketplace Version Check",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28970714"
+	},
+	"item": [
+		{
+			"name": "check-version",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{marketplaceUrl}}version",
+					"host": [
+						"{{marketplaceUrl}}version"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Número da versão",
+					"const expectedVersion = \"37.7.8\";",
+					"",
+					"// Checagem da versão atual",
+					"const marketplaceVersion = responseBody.match(/\\b\\d+\\.\\d+\\.\\d+\\b/);",
+					"",
+					"let testDescription = pm.variables.get(\"marketplaceName\") + \" - Versão: \";",
+					"let testPassed = false;",
+					"",
+					"if (marketplaceVersion && marketplaceVersion[0] === expectedVersion) {",
+					"    testDescription += marketplaceVersion[0];",
+					"    testPassed = true;",
+					"} else {",
+					"     testDescription += marketplaceVersion[0];",
+					"    testPassed = false;",
+					"}",
+					"",
+					"tests[testDescription] = testPassed;",
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "marketplaceUrl",
+			"value": "EC2_LINK_AQUI"
+		},
+		{
+			"key": "marketplaceName",
+			"value": "NOME_DO_MARKETPLACE_AQUI",
+			"type": "string"
+		}
+	]
+}
