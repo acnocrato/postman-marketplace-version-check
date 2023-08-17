@@ -55,7 +55,7 @@ No Script é utilizado o recurso de expressões regulares na variável `marketpl
 
 ## Feedbacks e contribuições
 
-Obrigado pela visita e caso tenha ficado alguma dúvida, fico à disposição para conversar a respeito e também estou aberto para receber feedbacks de como posso melhorá-lo em ocorrências futuras!
+Obrigado pela visita e caso tenha ficado alguma dúvida, fico à disposição para conversarmos a respeito e também estou disponível para receber feedbacks de como posso melhorá-lo em ocorrências futuras. :)
 
 ## Licença
 
